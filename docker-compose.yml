@@ -1,0 +1,7 @@
+version: '2'
+services:
+  node-exporter:
+    container_name: node-exporter 
+    image: widla/node-exporter
+    volumes:
+      - /data/prom_node_exporter:/home/app
