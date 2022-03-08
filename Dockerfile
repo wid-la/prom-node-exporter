@@ -1,6 +1,6 @@
-FROM golang:1.8
+FROM golang:1.17
 
-MAINTAINER Aurelien Chaudagne
+LABEL Aurelien Chaudagne
 
 RUN apt-get install git
 RUN apt-get install make mercurial
