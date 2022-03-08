@@ -4,12 +4,12 @@ LABEL Aurelien Chaudagne
 
 RUN apt-get install git
 RUN apt-get install make mercurial
-RUN go get github.com/prometheus/node_exporter 
+RUN go install github.com/prometheus/node_exporter@latest 
 
-WORKDIR /go/src/github.com/prometheus/node_exporter
+WORKDIR /go
 
-RUN export PATH=$PATH:~/go/bin
-RUN export GOROOT=~/go
-RUN make
+# RUN export PATH=$PATH:~/go/bin
+# RUN export GOROOT=~/go
+# RUN make
 
-CMD ["cp", "./node_exporter", "/home/app"]
+CMD ["cp", "/go/bin/node_exporter", "/home/app"]
